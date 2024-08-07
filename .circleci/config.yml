@@ -9,18 +9,17 @@ jobs:
   #upgrade pip
       - checkout
       - run:
-          name: Upgrade pip
+          name: Set up environment 
           command: |
             python3 -m venv venv
+            echo "virtual environment created"
             . venv/bin/activate
+            echo "virtual environment activated"
             pip install --upgrade pip
-          #2 create virtual environment and install dependencies -
-      - run:
-          name: Install dependencies
-          command: |
-              . venv/bin/activate
-              pip install -r requirements.txt
-          #3 run coding convention software and also the tester
+            echo "pip upgraded"
+            pip install -r requirements.txt
+            echo "dependencies installed"
+      #3 run coding convention software and also the tester
       - run:
           name: Run tests
           command: |
