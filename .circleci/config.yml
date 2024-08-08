@@ -21,6 +21,11 @@ jobs:
             echo "dependencies installed"
       # run coding convention software and also the tester
       - run:
+          name: Run flake8
+          command: |
+            . venv/bin/activate
+            flake8 –-exclude=venv* --statistics
+      - run:
           name: Run tests
           command: |
             . venv/bin/activate
