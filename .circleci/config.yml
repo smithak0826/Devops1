@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 
 jobs:
   build:
@@ -17,9 +17,7 @@ jobs:
             echo "virtual environment activated"
             pip install --upgrade pip
             echo "pip upgraded"
-            pip install -r requirements.txt
-            echo "dependencies installed"
-      # run coding convention software and also the tester
+       # run coding convention software and also the tester
       - run:
           name: Run flake8
           command: |
